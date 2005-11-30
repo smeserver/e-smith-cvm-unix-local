@@ -2,7 +2,7 @@ Summary: Module for supervising cvm auth daemon
 %define name e-smith-cvm-unix-local
 Name: %{name}
 %define version 1.1.0
-%define release 02
+%define release 03
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,9 @@ AutoReqProv: no
 Module for supervising cvm auth daemon
 
 %changelog
+* Wed Nov 30 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.0-03
+- Bump release number only
+
 * Wed May  4 2005 Charlie Brady <charlieb@e-smith.com>
 - [1.1.0-02]
 - Update cvm calling sequence, for later version of cvm.
