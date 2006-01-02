@@ -2,7 +2,7 @@ Summary: Module for supervising cvm auth daemon
 %define name e-smith-cvm-unix-local
 Name: %{name}
 %define version 1.1.0
-%define release 03
+%define release 04
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,10 @@ AutoReqProv: no
 Module for supervising cvm auth daemon
 
 %changelog
+* Mon Jan 2 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.0-04
+- Delete preun scriptlet which required supervise-scripts and 
+  tried to stop/remove the imap service [SME: 348]
+
 * Wed Nov 30 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.0-03
 - Bump release number only
 
@@ -77,13 +81,6 @@ mkdir -p $RPM_BUILD_ROOT/var/log/cvm
 /sbin/e-smith/create-system-user cvmlog 1003 'cvm output log user' /var/log/imap /bin/false
 
 %preun
-if [ "$1" = 0 ]
-then
-    # Make sure that imap is not running
-    svc-stop imap
-    # Now get svscan to forget about it
-    svc-remove imap
-fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
