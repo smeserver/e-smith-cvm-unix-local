@@ -1,15 +1,14 @@
 Summary: Module for supervising cvm auth daemon
 %define name e-smith-cvm-unix-local
 Name: %{name}
-%define version 1.1.0
-%define release 04
+%define version 1.2.0
+%define release 01
 Version: %{version}
 Release: %{release}
 License: GPL
 Vendor: Mitel Networks Corporation
 Group: Networking/Daemons
 Source: %{name}-%{version}.tar.gz
-Patch0: e-smith-cvm-unix-local-1.1.0-02.mitel_patch
 Packager: e-smith developers <bugs@e-smith.com>
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 Requires: cvm daemontools
@@ -22,6 +21,9 @@ AutoReqProv: no
 Module for supervising cvm auth daemon
 
 %changelog
+* Thu Mar 16 2006 Gordon Rowell <gordonr@gormand.com.au> 1.2.0-01
+- Roll stable stream version. [SME: 1016]
+
 * Mon Jan 2 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.0-04
 - Delete preun scriptlet which required supervise-scripts and 
   tried to stop/remove the imap service [SME: 348]
@@ -65,7 +67,6 @@ Module for supervising cvm auth daemon
 
 %prep
 %setup
-%patch0 -p1
 
 %build
 
