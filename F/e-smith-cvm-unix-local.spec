@@ -2,14 +2,14 @@ Summary: Module for supervising cvm auth daemon
 %define name e-smith-cvm-unix-local
 Name: %{name}
 %define version 1.2.0
-%define release 01
+%define release 2
 Version: %{version}
-Release: %{release}
+Release: %smerelease %{release}
+Packager: %{_packager}
 License: GPL
 Vendor: Mitel Networks Corporation
 Group: Networking/Daemons
 Source: %{name}-%{version}.tar.gz
-Packager: e-smith developers <bugs@e-smith.com>
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 Requires: cvm daemontools
 Requires: e-smith-lib >= 1.13.1-90
@@ -21,6 +21,10 @@ AutoReqProv: no
 Module for supervising cvm auth daemon
 
 %changelog
+* Thu Dec 07 2006 Shad L. Lords <slords@mail.com>
+- Update to new release naming.  No functional changes.
+- Make Packager generic
+
 * Thu Mar 16 2006 Gordon Rowell <gordonr@gormand.com.au> 1.2.0-01
 - Roll stable stream version. [SME: 1016]
 
