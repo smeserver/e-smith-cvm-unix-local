@@ -1,8 +1,10 @@
+# $Id: e-smith-cvm-unix-local.spec,v 1.2 2008/10/07 17:55:44 slords Exp $
+
 Summary: Module for supervising cvm auth daemon
 %define name e-smith-cvm-unix-local
 Name: %{name}
-%define version 1.2.0
-%define release 2
+%define version 2.2.0
+%define release 1
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -19,6 +21,9 @@ AutoReqProv: no
 Module for supervising cvm auth daemon
 
 %changelog
+* Tue Oct 7 2008 Shad L. Lords <slords@mail.com> 2.2.0-1.sme
+- Roll new stream to separate sme7/sme8 trees [SME: 4633]
+
 * Sun Apr 29 2007 Shad L. Lords <slords@mail.com>
 - Clean up spec so package can be built by koji/plague
 
